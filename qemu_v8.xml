@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-        <remote name="github"   fetch="https://github.com" />
-        <remote name="tfo"      fetch="https://git.trustedfirmware.org" />
-        <remote name="u-boot"   fetch="https://source.denx.de/u-boot" />
-        <default remote="github" revision="master" />
+	<remote name="github"		fetch="https://github.com" />
+	<remote name="github-private"	fetch="ssh://git@github.com" />
+        <remote name="tfo"		fetch="https://git.trustedfirmware.org" />
+	<remote name="u-boot"		fetch="https://source.denx.de/u-boot" />
+        <default remote="github"	revision="master" />
 
         <!-- OP-TEE gits -->
         <project path="optee_client"         name="OP-TEE/optee_client.git" />
         <project path="optee_os"             name="OP-TEE/optee_os.git" />
         <project path="optee_test"           name="OP-TEE/optee_test.git" />
-        <project path="build"                name="vascoguita/rvtee_optee_build.git">
+	<project path="build"                name="vascoguita/rvtee_optee_build.git" remote="github-private" >
                 <linkfile src="qemu_v8.mk" dest="build/Makefile" />
         </project>
 
